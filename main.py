@@ -56,10 +56,11 @@ def main():
 
     kernel = create_gaussian_kernel(kernel_size, sigma)
     kernel_sum = sum(map(sum, kernel))
-
     kernel_offset = kernel_size // 2
 
-    with tqdm(total=img.size[0] * img.size[1], desc="Processing image") as pbar:
+    with tqdm(
+        total=img.size[0] * img.size[1], desc="Processing image", unit="px"
+    ) as pbar:
         for x in range(img.size[0]):
             for y in range(img.size[1]):
                 pixel = img.getpixel((x, y))
