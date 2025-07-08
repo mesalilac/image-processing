@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--input", type=str, required=True)
-    parser.add_argument("--output", type=str, required=False, default="output.png")
+    parser.add_argument("--output", type=str, required=False)
 
     args = parser.parse_args()
     input = args.input
@@ -44,7 +44,10 @@ def main():
         for y in range(img.size[1]):
             new_img.putpixel((x, y), (average_r, average_g, average_b))
 
-    new_img.show()
+    if output is not None:
+        new_img.save(output)
+    else:
+        new_img.show()
 
 
 if __name__ == "__main__":
