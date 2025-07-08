@@ -1,4 +1,5 @@
 .venv
 build
 image_blur.egg-info
-test-image.png
+test-image-*.png
+output-image.png
