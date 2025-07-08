@@ -1,6 +1,0 @@
-[project]
-name = "image-processing"
-version = "0.1.0"
-description = "Image processing scripts"
-readme = "README.md"
-dependencies = ["pillow", "tqdm"]
