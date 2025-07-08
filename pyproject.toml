@@ -3,4 +3,4 @@ name = "image-blur"
 version = "0.1.0"
 description = "Image blur"
 readme = "README.md"
-dependencies = ["pillow"]
+dependencies = ["pillow", "tqdm"]
