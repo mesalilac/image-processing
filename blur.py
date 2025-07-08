@@ -50,9 +50,14 @@ def main():
 
     img = Image.open(input)
     new_img = Image.new(img.mode, img.size)
+
+    print(f"------------------------------------")
     print(f"Image format: {img.format}")
     print(f"Image size: {img.size}")
     print(f"Image mode: {img.mode}")
+    print(f"Kernel size: {kernel_size}")
+    print(f"Sigma: {sigma}")
+    print(f"------------------------------------")
 
     kernel = create_gaussian_kernel(kernel_size, sigma)
     kernel_sum = sum(map(sum, kernel))
