@@ -48,6 +48,14 @@ def main():
     kernel_size: int = args.kernel_size
     sigma: float = args.sigma
 
+    if kernel_size % 2 == 0:
+        raise ValueError("Kernel size must be odd")
+    elif kernel_size < 3:
+        raise ValueError("Kernel size must be at least 3")
+
+    if sigma <= 0:
+        raise ValueError("Sigma must be greater than zero")
+
     img = Image.open(input)
     new_img = Image.new(img.mode, img.size)
 
